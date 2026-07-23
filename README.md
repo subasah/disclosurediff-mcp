@@ -6,9 +6,43 @@ Not financial advice. Public SEC filings only.
 
 **Live landing page:** https://subasah.github.io/disclosurediff-mcp/
 
-## Why this exists
+## Who this is for
 
-Most finance MCPs wrap price APIs. Agents still hallucinate what companies *disclosed*. DisclosureDiff returns structured deltas and grounded excerpts — every substantive answer includes a live `sec.gov` URL + section id.
+Built for people who need **what changed in SEC disclosures**, with citations — not price charts or trading signals.
+
+| Audience | What you get |
+|----------|----------------|
+| Equity / credit analysts | YoY Item 1A / 1 / 7 / 3 diffs before you dig into the full filing |
+| Journalists & researchers | Grounded excerpts + live EDGAR links for every claim you publish |
+| Compliance / IR | Peer risk-theme compare and material 8-K event lists with sources |
+| Retail researchers | Diffs and claim grounding without inventing numbers |
+| AI / agent builders | MCP tools that refuse to answer without citations |
+| Recruiters evaluating domain MCP work | A focused filing-diff server with evals, threat model, and deploy docs |
+
+**Not for:** automated trading, portfolio advice, or “alpha” bots. This is disclosure text analysis only — **not financial advice**.
+
+### Why it was developed
+
+Agents routinely invent financial facts. Existing EDGAR MCPs mostly **fetch filings**; market-data MCPs wrap prices. Neither reliably answers: *what changed year-over-year in Item 1A, with a cite for every delta?*
+
+### What others don’t do well
+
+- Market-data wrappers → quotes, not disclosure deltas
+- EDGAR fetchers → raw HTML/text, not structured YoY diffs
+- Generic RAG over filings → soft citations, easy to hallucinate omission
+
+DisclosureDiff returns structured deltas, mandatory `sec.gov` URLs + section ids, and peer risk-theme compare in one tool surface.
+
+### How to take advantage of it
+
+1. Install in Cursor or Claude Desktop (stdio) — see Quick start below.
+2. Ask concrete prompts; require cites on every change:
+
+   - Diff Apple’s Item 1A year-over-year and cite every change.
+   - Ground this claim against MSFT’s latest 10-K: “Microsoft discloses material cybersecurity risks.”
+   - Compare NVDA vs AMD vs AVGO Item 1A themes — which peers omit climate risk language?
+
+3. Open each returned EDGAR link before you rely on the answer.
 
 ## Tools
 
