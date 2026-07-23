@@ -2,22 +2,67 @@
 
 **Compare real SEC filings year-over-year — and always get a link back to the source.**
 
-Ask an AI about a company and it often invents “facts.” Reading two 100-page annual reports by hand is painful. Spotting what *changed* in the risk section is worse. DisclosureDiff plugs into Cursor or Claude (via [MCP](https://modelcontextprotocol.io/) — a way for AI apps to call tools) and diffs the actual filing text from [EDGAR](https://www.sec.gov/edgar) (the SEC’s public filing database), with a `sec.gov` link on every change.
+Ask an AI about a company and it often invents “facts.” Reading two 100-page annual reports by hand is painful. Spotting what *changed* in the risk section is worse. DisclosureDiff plugs into Cursor or Claude (via [MCP](https://modelcontextprotocol.io/) — a way for AI apps to call tools) and diffs the actual filing text from [EDGAR](https://www.sec.gov/edgar) — the [SEC](#crash-course-sec-edgar-10-k-and-item-1a)’s free public filing database — with a `sec.gov` link on every change.
 
 Not financial advice. Public SEC filings only.
 
 **Live landing page:** https://subasah.github.io/disclosurediff-mcp/
 
+New to finance jargon? Skim the [crash course](#crash-course-sec-edgar-10-k-and-item-1a) below first (SEC, EDGAR, 10-K, Item 1A).
+
+## Crash course: SEC, EDGAR, 10-K, and Item 1A
+
+This is a plain-English primer — not legal or financial advice. It’s the vocabulary DisclosureDiff uses everywhere else.
+
+### SEC
+
+The **SEC** is the U.S. **Securities and Exchange Commission** — the federal regulator for public securities markets. Public companies (ones whose stock trades on exchanges) must disclose certain information so investors can make informed decisions and markets stay fairer. DisclosureDiff only reads those public disclosures; it doesn’t advise trades.
+
+### EDGAR
+
+**EDGAR** (Electronic Data Gathering, Analysis, and Retrieval) is the SEC’s public filing database. Anyone can look up company reports for free at [sec.gov/edgar](https://www.sec.gov/edgar). This MCP pulls real filing text from there and cites `sec.gov` URLs so you can verify every answer yourself.
+
+### 10-K (and friends)
+
+A **10-K** is a company’s **annual report** filed with the SEC — a yearly deep dive covering the business, risks, financials, legal matters, and more. Two cousins you’ll see in filings:
+
+- **10-Q** — quarterly update (shorter, more frequent)
+- **8-K** — “something material just happened” (acquisition, leadership change, etc.), filed promptly
+
+DisclosureDiff’s main demo path is year-over-year comparison of sections inside **10-K**s.
+
+### Item 1A (Risk Factors)
+
+**Item 1A** is a required section of the 10-K titled **Risk Factors**. Management lists what could go wrong: competition, regulation, supply chain, lawsuits, cyber incidents, and so on.
+
+**Why it matters:** it’s the company’s own warning label. What gets **added** or **removed** year to year often signals new worries (or worries that cooled). Journalists, analysts, and students compare those edits. **That’s exactly what DisclosureDiff diffs** — last year’s Item 1A vs this year’s, from real EDGAR 10-Ks, with citations.
+
+### Why companies care
+
+Listed companies have a legal duty to disclose. Incomplete or misleading disclosures can mean regulatory or legal trouble. Investors, reporters, and researchers treat filings as **primary sources** — not press-release spin.
+
+### How this ties to the MCP
+
+When we say *“diff Apple’s Item 1A,”* we mean: pull Apple’s latest and prior **10-K** Risk Factors from **EDGAR**, compare the text, and show what changed with links back to the SEC filings. Same idea for grounding a claim or comparing peer risk themes.
+
+| Term | One-liner |
+|------|-----------|
+| **SEC** | U.S. market regulator; requires public-company disclosures |
+| **EDGAR** | Free SEC database of those filings (what this MCP reads) |
+| **10-K** | Annual report filed with the SEC |
+| **10-Q / 8-K** | Quarterly update / “something material happened” filing |
+| **Item 1A** | Risk Factors section — management’s warning list |
+
 ## Why you’d use this
 
-**In one sentence:** it compares real company disclosures (like the risk factors in a **10-K**, the annual report companies file with the SEC) and returns structured changes + short excerpts + EDGAR links — so the AI can’t just make things up.
+**In one sentence:** it compares real company disclosures (like the [**risk factors** in a **10-K**](#crash-course-sec-edgar-10-k-and-item-1a) — the annual report companies file with the SEC) and returns structured changes + short excerpts + EDGAR links — so the AI can’t just make things up.
 
 ### You might use this if…
 
 - **You’re researching a stock** and want a concrete answer like: “What new risks did Apple add this year?” instead of scrolling two PDFs.
 - **You’re a student writing about a company** and need citable primary sources, not a chatbot paraphrase with no URL.
 - **You’re a journalist or researcher** checking whether management’s story matches what they actually filed.
-- **You’re comparing competitors** (e.g. NVIDIA vs AMD) and care which risk *themes* show up in Item 1A — not yesterday’s stock price.
+- **You’re comparing competitors** (e.g. NVIDIA vs AMD) and care which risk *themes* show up in [Item 1A](#crash-course-sec-edgar-10-k-and-item-1a) — not yesterday’s stock price.
 - **You’re building an AI agent** and need tools that return filing text with mandatory citations, not hallucinated numbers.
 
 ### How to try it in 2 minutes
