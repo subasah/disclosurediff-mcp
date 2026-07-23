@@ -1,0 +1,8 @@
+# Experimental placeholder — prefer Railway/Fly Docker deploy for v0.1.
+# Workers need an R2-backed cache + WebStandard Streamable HTTP port.
+name = "disclosurediff-mcp"
+main = "workers/placeholder.js"
+compatibility_date = "2024-11-01"
+
+[vars]
+TRANSPORT = "http"

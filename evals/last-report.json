@@ -1,0 +1,230 @@
+{
+  "generatedAt": "2026-07-23T22:30:51.677Z",
+  "live": true,
+  "totalCases": 32,
+  "ran": 32,
+  "skipped": 0,
+  "passed": 32,
+  "failed": 0,
+  "passRate": 1,
+  "citationRate": 1,
+  "targetCitationRate": 1,
+  "results": [
+    {
+      "id": "cite-01",
+      "kind": "citation_url",
+      "ok": true,
+      "citationOk": true,
+      "detail": "url valid=true"
+    },
+    {
+      "id": "cite-02",
+      "kind": "citation_url",
+      "ok": true,
+      "citationOk": true,
+      "detail": "url valid=true"
+    },
+    {
+      "id": "cite-03",
+      "kind": "citation_url",
+      "ok": true,
+      "detail": "url valid=false"
+    },
+    {
+      "id": "cite-04",
+      "kind": "citation_url",
+      "ok": true,
+      "detail": "url valid=false"
+    },
+    {
+      "id": "diff-01",
+      "kind": "diff_synthetic",
+      "ok": true,
+      "citationOk": true,
+      "detail": "changes=2"
+    },
+    {
+      "id": "diff-02",
+      "kind": "diff_synthetic",
+      "ok": true,
+      "citationOk": true,
+      "detail": "changes=2"
+    },
+    {
+      "id": "diff-03",
+      "kind": "diff_synthetic",
+      "ok": true,
+      "citationOk": true,
+      "detail": "changes=0"
+    },
+    {
+      "id": "sec-01",
+      "kind": "section_extract",
+      "ok": true,
+      "detail": "len=107"
+    },
+    {
+      "id": "sec-02",
+      "kind": "section_extract",
+      "ok": true,
+      "detail": "len=180"
+    },
+    {
+      "id": "ground-01",
+      "kind": "ground_synthetic",
+      "ok": true,
+      "citationOk": true,
+      "detail": "hits=1"
+    },
+    {
+      "id": "ground-02",
+      "kind": "ground_synthetic",
+      "ok": true,
+      "citationOk": true,
+      "detail": "hits=0"
+    },
+    {
+      "id": "meth-01",
+      "kind": "methodology",
+      "ok": true,
+      "detail": "0.1.0"
+    },
+    {
+      "id": "diff-04",
+      "kind": "diff_synthetic",
+      "ok": true,
+      "citationOk": true,
+      "detail": "changes=1"
+    },
+    {
+      "id": "diff-05",
+      "kind": "diff_synthetic",
+      "ok": true,
+      "citationOk": true,
+      "detail": "changes=2"
+    },
+    {
+      "id": "sec-03",
+      "kind": "section_extract",
+      "ok": true,
+      "detail": "len=183"
+    },
+    {
+      "id": "ground-03",
+      "kind": "ground_synthetic",
+      "ok": true,
+      "citationOk": true,
+      "detail": "hits=1"
+    },
+    {
+      "id": "cite-05",
+      "kind": "citation_url",
+      "ok": true,
+      "citationOk": true,
+      "detail": "url valid=true"
+    },
+    {
+      "id": "meth-02",
+      "kind": "methodology",
+      "ok": true,
+      "detail": "0.1.0"
+    },
+    {
+      "id": "diff-06",
+      "kind": "diff_synthetic",
+      "ok": true,
+      "citationOk": true,
+      "detail": "changes=2"
+    },
+    {
+      "id": "sec-04",
+      "kind": "section_extract",
+      "ok": true,
+      "detail": "len=117"
+    },
+    {
+      "id": "live-diff-aapl-1a",
+      "kind": "live_diff",
+      "ok": true,
+      "citationOk": true,
+      "detail": "changes=16 newer=2025-10-31"
+    },
+    {
+      "id": "live-diff-msft-1a",
+      "kind": "live_diff",
+      "ok": true,
+      "citationOk": true,
+      "detail": "changes=25 newer=2025-07-30"
+    },
+    {
+      "id": "live-diff-nvda-1a",
+      "kind": "live_diff",
+      "ok": true,
+      "citationOk": true,
+      "detail": "changes=25 newer=2026-02-25"
+    },
+    {
+      "id": "live-diff-aapl-7",
+      "kind": "live_diff",
+      "ok": true,
+      "citationOk": true,
+      "detail": "changes=25 newer=2025-10-31"
+    },
+    {
+      "id": "live-ground-aapl",
+      "kind": "live_ground",
+      "ok": true,
+      "citationOk": true,
+      "detail": "verdict=supported evidence=5"
+    },
+    {
+      "id": "live-ground-msft",
+      "kind": "live_ground",
+      "ok": true,
+      "citationOk": true,
+      "detail": "verdict=supported evidence=5"
+    },
+    {
+      "id": "live-events-aapl",
+      "kind": "live_events",
+      "ok": true,
+      "citationOk": true,
+      "detail": "events=3"
+    },
+    {
+      "id": "live-events-multi",
+      "kind": "live_events",
+      "ok": true,
+      "citationOk": true,
+      "detail": "events=6"
+    },
+    {
+      "id": "live-peers-semi",
+      "kind": "live_peers",
+      "ok": true,
+      "citationOk": true,
+      "detail": "themes=8"
+    },
+    {
+      "id": "live-peers-tech",
+      "kind": "live_peers",
+      "ok": true,
+      "citationOk": true,
+      "detail": "themes=8"
+    },
+    {
+      "id": "live-diff-googl-1a",
+      "kind": "live_diff",
+      "ok": true,
+      "citationOk": true,
+      "detail": "changes=25 newer=2026-02-05"
+    },
+    {
+      "id": "live-diff-amzn-1a",
+      "kind": "live_diff",
+      "ok": true,
+      "citationOk": true,
+      "detail": "changes=12 newer=2026-02-06"
+    }
+  ]
+}

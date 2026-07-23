@@ -1,0 +1,17 @@
+services:
+  disclosurediff:
+    build: .
+    ports:
+      - "8787:8787"
+    environment:
+      TRANSPORT: http
+      PORT: 8787
+      SEC_CONTACT_EMAIL: ${SEC_CONTACT_EMAIL:-contact@example.com}
+      ALLOW_ANONYMOUS: "true"
+      API_KEYS: ${API_KEYS:-}
+    volumes:
+      - dd-cache:/app/.cache
+      - dd-audit:/app/audit-logs
+volumes:
+  dd-cache:
+  dd-audit:

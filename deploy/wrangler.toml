@@ -1,0 +1,12 @@
+# Cloudflare Workers placeholder — prefer Railway/Fly for the Node Express MCP
+# until you port to WebStandardStreamableHTTPServerTransport.
+#
+# Pattern A: Worker routes traffic to a Containers-backed Node service.
+# Pattern B: Use wrangler to deploy a thin proxy:
+
+name = "disclosurediff-mcp"
+main = "deploy/worker-proxy.js"
+compatibility_date = "2026-01-01"
+
+[vars]
+UPSTREAM_MCP_URL = "https://REPLACE-ME.up.railway.app/mcp"

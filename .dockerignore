@@ -1,0 +1,11 @@
+node_modules
+dist
+.cache
+audit-logs
+metrics.jsonl
+.git
+.env
+.env.local
+*.log
+.DS_Store
+.wrangler

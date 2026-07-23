@@ -1,0 +1,42 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/server.schema.json",
+  "name": "io.github.disclosurediff/disclosurediff-mcp",
+  "description": "YoY SEC disclosure diffs and claim grounding with mandatory EDGAR citations for AI agents. Not financial advice.",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/subasah/disclosurediff-mcp",
+    "source": "github"
+  },
+  "packages": [
+    {
+      "registry_type": "npm",
+      "identifier": "disclosurediff-mcp",
+      "version": "0.1.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environment_variables": [
+        {
+          "name": "SEC_CONTACT_EMAIL",
+          "description": "Contact email included in the SEC User-Agent header",
+          "is_required": true,
+          "is_secret": false
+        }
+      ]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://YOUR_HOST/mcp",
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "description": "API key for the public demo tier",
+          "is_required": false,
+          "is_secret": true
+        }
+      ]
+    }
+  ]
+}

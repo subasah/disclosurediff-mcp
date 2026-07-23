@@ -1,0 +1,12 @@
+# smithery.yaml — metadata for Smithery marketplace listing
+name: disclosurediff
+description: YoY SEC disclosure diffs with mandatory EDGAR citations
+homepage: https://github.com/YOUR_ORG/disclosurediff-mcp
+# After deploy, set startUrl to your public Streamable HTTP endpoint:
+startUrl: https://YOUR_HOST/mcp
+tags:
+  - finance
+  - sec
+  - edgar
+  - citations
+  - mcp

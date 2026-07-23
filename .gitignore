@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+dist/
+coverage/
+.cache/
+.data/
+*.log
+.env
+.env.local
+.DS_Store
+.wrangler/
+.dev.vars
+audit-logs/
+metrics.jsonl
+
+# Build artifacts
+*.tsbuildinfo

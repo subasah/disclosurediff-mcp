@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DisclosureDiff MCP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="atmosphere" aria-hidden="true"></div>
+  <header class="hero">
+    <p class="eyebrow">MCP · SEC EDGAR</p>
+    <h1>DisclosureDiff</h1>
+    <p class="lede">Year-over-year disclosure changes with mandatory filing citations — built for agents that must not invent financial facts.</p>
+    <div class="cta">
+      <a class="primary" href="https://github.com/subasah/disclosurediff-mcp">View on GitHub</a>
+      <a class="ghost" href="#install">Install</a>
+    </div>
+  </header>
+
+  <section id="prompts">
+    <h2>Try these prompts</h2>
+    <ol>
+      <li>Diff Apple’s Item 1A risk factors year-over-year and cite every change with EDGAR links.</li>
+      <li>Ground this claim against Microsoft’s latest 10-K: “Microsoft discloses material cybersecurity risks.”</li>
+      <li>Compare NVDA vs AMD vs AVGO Item 1A themes — which peers discuss climate risk?</li>
+    </ol>
+  </section>
+
+  <section id="install">
+    <h2>Install (Cursor / Claude)</h2>
+    <pre><code>{
+  "mcpServers": {
+    "disclosurediff": {
+      "command": "node",
+      "args": ["/path/to/disclosurediff-mcp/dist/index.js"],
+      "env": {
+        "SEC_CONTACT_EMAIL": "you@example.com"
+      }
+    }
+  }
+}</code></pre>
+    <p>Remote: point <code>url</code> at <code>https://YOUR_HOST/mcp</code> with header <code>X-API-Key</code>.</p>
+  </section>
+
+  <section id="architecture">
+    <h2>Architecture</h2>
+    <p>Agent → Streamable HTTP / stdio MCP → EDGAR client (User-Agent + throttle + cache) → section diff / claim ground → citation gate → audit log.</p>
+  </section>
+
+  <footer>
+    <p><strong>Not financial advice.</strong> Summarizes public SEC text only. Verify every claim on EDGAR. See methodology tool and threat model in the repo.</p>
+  </footer>
+  <script>
+    document.querySelector('.hero').animate(
+      [{ opacity: 0, transform: 'translateY(12px)' }, { opacity: 1, transform: 'translateY(0)' }],
+      { duration: 700, easing: 'cubic-bezier(.2,.8,.2,1)', fill: 'forwards' }
+    );
+    document.querySelectorAll('section').forEach((el, i) => {
+      el.animate(
+        [{ opacity: 0 }, { opacity: 1 }],
+        { duration: 500, delay: 200 + i * 120, fill: 'forwards', easing: 'ease-out' }
+      );
+      el.style.opacity = '0';
+    });
+  </script>
+</body>
+</html>
