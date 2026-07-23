@@ -50,6 +50,8 @@ npm run start:stdio
 
 ### Remote Streamable HTTP
 
+No public hosted `/mcp` endpoint is published yet. Run locally or deploy per [DEPLOY.md](./DEPLOY.md), then point clients at your HTTPS URL:
+
 ```bash
 export TRANSPORT=http
 export PORT=8787
@@ -61,13 +63,13 @@ npm run start:http
 
 Health: `GET /health` · MCP: `POST /mcp` (header `X-API-Key` when keys are configured)
 
-Cursor remote snippet:
+Cursor remote snippet (replace the URL after you deploy):
 
 ```json
 {
   "mcpServers": {
     "disclosurediff": {
-      "url": "https://YOUR_HOST/mcp",
+      "url": "https://YOUR_PUBLIC_HOST/mcp",
       "headers": {
         "X-API-Key": "demo-key-change-me"
       }

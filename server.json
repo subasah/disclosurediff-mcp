@@ -1,40 +1,29 @@
 {
-  "$schema": "https://static.modelcontextprotocol.io/schemas/server.schema.json",
-  "name": "io.github.disclosurediff/disclosurediff-mcp",
-  "description": "YoY SEC disclosure diffs and claim grounding with mandatory EDGAR citations for AI agents. Not financial advice.",
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.subasah/disclosurediff-mcp",
+  "description": "YoY SEC disclosure diffs and claim grounding with mandatory EDGAR citations.",
+  "title": "DisclosureDiff",
   "version": "0.1.0",
   "repository": {
     "url": "https://github.com/subasah/disclosurediff-mcp",
     "source": "github"
   },
+  "websiteUrl": "https://subasah.github.io/disclosurediff-mcp/",
   "packages": [
     {
-      "registry_type": "npm",
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
       "identifier": "disclosurediff-mcp",
       "version": "0.1.0",
       "transport": {
         "type": "stdio"
       },
-      "environment_variables": [
+      "environmentVariables": [
         {
           "name": "SEC_CONTACT_EMAIL",
           "description": "Contact email included in the SEC User-Agent header",
-          "is_required": true,
-          "is_secret": false
-        }
-      ]
-    }
-  ],
-  "remotes": [
-    {
-      "type": "streamable-http",
-      "url": "https://YOUR_HOST/mcp",
-      "headers": [
-        {
-          "name": "X-API-Key",
-          "description": "API key for the public demo tier",
-          "is_required": false,
-          "is_secret": true
+          "isRequired": true,
+          "isSecret": false
         }
       ]
     }

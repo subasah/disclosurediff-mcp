@@ -28,7 +28,13 @@
     "disclosure",
     "citations"
   ],
-  "author": "DisclosureDiff Contributors",
+  "author": "Suba Sah <sah.suba@gmail.com>",
+  "mcpName": "io.github.subasah/disclosurediff-mcp",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/subasah/disclosurediff-mcp.git"
+  },
+  "homepage": "https://subasah.github.io/disclosurediff-mcp/",
   "license": "MIT",
   "engines": {
     "node": ">=20"
