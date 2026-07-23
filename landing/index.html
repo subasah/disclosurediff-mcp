@@ -14,7 +14,7 @@
   <header class="hero">
     <p class="eyebrow">MCP · SEC EDGAR</p>
     <h1>DisclosureDiff</h1>
-    <p class="lede">Year-over-year disclosure changes with mandatory filing citations — built for agents that must not invent financial facts.</p>
+    <p class="lede">AI chat invents company “facts.” Reading two 10-Ks by hand is painful. DisclosureDiff plugs into Cursor or Claude, compares real SEC filings, and always links back to EDGAR — so you can see what actually changed.</p>
     <div class="cta">
       <a class="primary" href="https://github.com/subasah/disclosurediff-mcp">View on GitHub</a>
       <a class="ghost" href="https://subasah.github.io/disclosurediff-mcp/">Docs site</a>
@@ -23,16 +23,18 @@
   </header>
 
   <section id="audience">
-    <h2>Who this is for</h2>
-    <p>Analysts, journalists, compliance/IR, researchers, and agent builders who need YoY disclosure diffs and peer risk themes with mandatory EDGAR citations — not market-data wrappers or raw filing fetchers. Not a trading bot; not financial advice. Public SEC text only.</p>
+    <h2>Why you’d use this</h2>
+    <p>Use it when you care what a company <em>wrote in its filings</em> — new risks in a 10-K (the annual SEC report), whether a claim matches the text, or how peers’ risk themes differ — not stock prices or trading tips.</p>
+    <p>You might ask: what new risks did Apple add this year? Does Microsoft’s latest 10-K support a homework claim? How do NVIDIA and AMD risk themes compare? Or wire it into an agent that must not invent filing text.</p>
+    <p>You get structured changes, short excerpts, and live <code>sec.gov</code> links. Not a stock picker, not a price feed, not financial advice.</p>
   </section>
 
   <section id="prompts">
     <h2>Try these prompts</h2>
     <ol>
       <li>Diff Apple’s Item 1A risk factors year-over-year and cite every change with EDGAR links.</li>
-      <li>Ground this claim against Microsoft’s latest 10-K: “Microsoft discloses material cybersecurity risks.”</li>
-      <li>Compare NVDA vs AMD vs AVGO Item 1A themes — which peers discuss climate risk?</li>
+      <li>Ground this claim against Microsoft’s latest 10-K: “Microsoft discloses material cybersecurity risks.” Include excerpts and filing URLs.</li>
+      <li>Compare NVDA vs AMD Item 1A themes — which risks show up for one peer but not the other? Cite EDGAR.</li>
     </ol>
   </section>
 

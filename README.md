@@ -1,48 +1,49 @@
 # DisclosureDiff MCP
 
-**Year-over-year SEC disclosure diffs with mandatory EDGAR citations for AI agents.**
+**Compare real SEC filings year-over-year — and always get a link back to the source.**
+
+Ask an AI about a company and it often invents “facts.” Reading two 100-page annual reports by hand is painful. Spotting what *changed* in the risk section is worse. DisclosureDiff plugs into Cursor or Claude (via [MCP](https://modelcontextprotocol.io/) — a way for AI apps to call tools) and diffs the actual filing text from [EDGAR](https://www.sec.gov/edgar) (the SEC’s public filing database), with a `sec.gov` link on every change.
 
 Not financial advice. Public SEC filings only.
 
 **Live landing page:** https://subasah.github.io/disclosurediff-mcp/
 
-## Who this is for
+## Why you’d use this
 
-Built for people who need **what changed in SEC disclosures**, with citations — not price charts or trading signals.
+**In one sentence:** it compares real company disclosures (like the risk factors in a **10-K**, the annual report companies file with the SEC) and returns structured changes + short excerpts + EDGAR links — so the AI can’t just make things up.
 
-| Audience | What you get |
-|----------|----------------|
-| Equity / credit analysts | YoY Item 1A / 1 / 7 / 3 diffs before you dig into the full filing |
-| Journalists & researchers | Grounded excerpts + live EDGAR links for every claim you publish |
-| Compliance / IR | Peer risk-theme compare and material 8-K event lists with sources |
-| Retail researchers | Diffs and claim grounding without inventing numbers |
-| AI / agent builders | MCP tools that refuse to answer without citations |
-| Recruiters evaluating domain MCP work | A focused filing-diff server with evals, threat model, and deploy docs |
+### You might use this if…
 
-**Not for:** automated trading, portfolio advice, or “alpha” bots. This is disclosure text analysis only — **not financial advice**.
+- **You’re researching a stock** and want a concrete answer like: “What new risks did Apple add this year?” instead of scrolling two PDFs.
+- **You’re a student writing about a company** and need citable primary sources, not a chatbot paraphrase with no URL.
+- **You’re a journalist or researcher** checking whether management’s story matches what they actually filed.
+- **You’re comparing competitors** (e.g. NVIDIA vs AMD) and care which risk *themes* show up in Item 1A — not yesterday’s stock price.
+- **You’re building an AI agent** and need tools that return filing text with mandatory citations, not hallucinated numbers.
 
-### Why it was developed
+### How to try it in 2 minutes
 
-Agents routinely invent financial facts. Existing EDGAR MCPs mostly **fetch filings**; market-data MCPs wrap prices. Neither reliably answers: *what changed year-over-year in Item 1A, with a cite for every delta?*
+1. Install the server in Cursor or Claude Desktop (see [Quick start](#quick-start-local-stdio) below — clone, `npm install`, `npm run build`, paste the config JSON).
+2. Paste one of these prompts into chat:
+   - *Investor curiosity:* `Diff Apple’s Item 1A risk factors year-over-year and cite every change with EDGAR links.`
+   - *Homework / paper:* `Ground this claim against Microsoft’s latest 10-K: “Microsoft discloses material cybersecurity risks.” Include excerpts and filing URLs.`
+   - *Competitor scan:* `Compare NVDA vs AMD Item 1A themes — which risks show up for one peer but not the other? Cite EDGAR.`
+3. Click an EDGAR link in the answer and skim the filing yourself before you trust it.
 
-### What others don’t do well
+### What you get back
 
-- Market-data wrappers → quotes, not disclosure deltas
-- EDGAR fetchers → raw HTML/text, not structured YoY diffs
-- Generic RAG over filings → soft citations, easy to hallucinate omission
+Structured change lists (added / removed / modified), short quoted snippets from the filing, and live `sec.gov` URLs (plus section ids). Enough to verify the claim — **not** buy/sell recommendations, price targets, or portfolio advice.
 
-DisclosureDiff returns structured deltas, mandatory `sec.gov` URLs + section ids, and peer risk-theme compare in one tool surface.
+### What this is NOT
 
-### How to take advantage of it
+- Not a stock picker or “alpha” bot
+- Not a price feed or market-data API
+- Not financial, legal, or investment advice
 
-1. Install in Cursor or Claude Desktop (stdio) — see Quick start below.
-2. Ask concrete prompts; require cites on every change:
+It only analyzes publicly filed disclosure **text**. Verify every claim on EDGAR.
 
-   - Diff Apple’s Item 1A year-over-year and cite every change.
-   - Ground this claim against MSFT’s latest 10-K: “Microsoft discloses material cybersecurity risks.”
-   - Compare NVDA vs AMD vs AVGO Item 1A themes — which peers omit climate risk language?
+### Why it exists (vs other tools)
 
-3. Open each returned EDGAR link before you rely on the answer.
+Chat agents invent financial facts. Many EDGAR MCPs only **fetch** raw filings; market-data MCPs wrap **prices**. Neither answers: *what changed year-over-year in Item 1A, with a cite for every delta?* DisclosureDiff returns structured diffs, mandatory citations, and peer risk-theme compare in one tool surface.
 
 ## Tools
 
@@ -114,9 +115,9 @@ Cursor remote snippet (replace the URL after you deploy):
 
 ## Demo prompts
 
-1. Diff Apple’s Item 1A risk factors year-over-year and cite every change.
-2. Ground this claim against MSFT’s latest 10-K: “Microsoft discloses material cybersecurity risks.”
-3. Compare NVDA vs AMD vs AVGO Item 1A themes and show which peers omit climate risk language.
+1. Diff Apple’s Item 1A risk factors year-over-year and cite every change with EDGAR links.
+2. Ground this claim against Microsoft’s latest 10-K: “Microsoft discloses material cybersecurity risks.” Include excerpts and filing URLs.
+3. Compare NVDA vs AMD Item 1A themes — which risks show up for one peer but not the other? Cite EDGAR.
 
 ## Eval results
 
